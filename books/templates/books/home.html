@@ -1,0 +1,83 @@
+{% extends 'books/base.html' %}
+
+{% load static %}  <!-- Load static files -->
+
+{% block content %}
+<!-- Background Image -->
+<div class="bg-container">
+    <img src="{% static 'images/final.png' %}" alt="Background Image" class="bg-image">
+    <div class="bg-overlay"></div> <!-- Transparent overlay -->
+</div>
+<div class="container text-center mt-5">
+    <h1 class="display-4 fw-bold animate__animated animate__fadeIn" style="color: #0a0a09;">
+        Welcome to Hogwarts Reads 📚
+    </h1>
+    <p class="lead animate__animated animate__fadeIn animate__delay-1s" style="color: #ffffff;">
+        Discover, review, and explore magical books from the wizarding world.
+    </p>
+
+    <!-- Search Form -->
+    <form method="GET" action="{% url 'search_books' %}" class="d-flex justify-content-center mt-4 animate__animated animate__fadeInUp animate__delay-2s">
+        <input type="text" name="q" class="form-control w-50 me-2" placeholder="Search books by title, author, or genre...">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    <!-- Trending Book Section -->
+    {% if trending_book %}
+    <div class="mt-5 animate__animated animate__zoomIn animate__delay-3s">
+        <h2 class="fw-bold fs-2" style="color: #000;">📖 Trending Book</h2>
+        <div class="card shadow-lg mx-auto hover-shadow" style="max-width: 450px;">
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="{% url 'book_detail' trending_book.id %}" class="text-decoration-none text-dark fw-bold fs-3">
+                        {{ trending_book.title }}
+                    </a>
+                </h4>
+                <p class="card-text text-muted fs-5 fw-semibold">by {{ trending_book.author }}</p>
+                <p class="badge bg-warning text-dark fs-4 px-3 py-2 rounded">
+                    ⭐ Rating: {{ trending_book.average_rating }}/5
+                </p>
+                <br>
+                <a href="{% url 'book_detail' trending_book.id %}" class="btn btn-lg btn-primary btn-hover-effect mt-3">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Featured Books Section -->
+    <div class="row mt-5">
+        <h2 class="fw-bold animate__animated animate__fadeIn" style="color: #000;">Featured Books</h2>
+
+        {% for book in books %}
+        <div class="col-md-4 mb-4 animate__animated animate__fadeInUp" style="animation-delay: calc(0.15s * {{ forloop.counter }});">
+            <div class="card shadow-lg book-card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="{% url 'book_detail' book.id %}" class="text-decoration-none text-dark fw-bold">
+                            {{ book.title }}
+                        </a>
+                    </h5>
+                    <p class="card-text text-muted fs-5 fw-semibold"> by {{ book.author }}</p>
+                    <p class="badge bg-warning text-dark fs-4 px-3 py-2 rounded">
+                        ⭐ Rating: {{ book.average_rating }}/5
+                    </p>
+                    
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'book_detail' book.id %}" class="btn btn-primary btn-hover-effect">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-muted animate__animated animate__fadeIn">No featured books available.</p>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Animate.css Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<!-- Link External CSS -->
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% endblock %}

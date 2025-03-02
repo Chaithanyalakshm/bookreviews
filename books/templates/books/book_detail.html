@@ -1,0 +1,119 @@
+{% extends 'books/base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<!-- Link External CSS -->
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- bg image -->
+<div class="bg-container">
+    <img src="{% static 'images/bookd.png' %}" alt="Background Image" class="bg-image">
+    <div class="bg-overlay"></div> <!-- Transparent overlay -->
+</div>
+
+
+<!-- Book Detail Section -->
+
+
+   
+<div class="book-detail-container">
+    <div class="book-hero">
+        <div class="book-hero-content">
+            <h1 class="book-title">{{ book.title }}</h1>
+            <p class="book-author">by {{ book.author }}</p>
+            <div class="rating-badge">
+                <i class="fas fa-star"></i>
+                <span>{{ average_rating }}/5</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="book-content">
+        <div class="book-image-wrapper">
+            <img src="{% static 'images/ani.png' %}" alt="Book Cover" class="book-image">
+        </div>
+        
+        <div class="book-info">
+            <div class="book-metadata">
+                <div class="metadata-item">
+                    <i class="fas fa-bookmark"></i>
+                    <span>{{ book.genre }}</span>
+                </div>
+            </div>
+            
+            <div class="book-description">
+                <h2>About the Book</h2>
+                <p>{{ book.description }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reviews Section -->
+    <div class="reviews-section">
+        <h2 class="section-heading">Reader Reviews</h2>
+        
+        <div class="reviews-container">
+            {% for review in reviews %}
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="review-rating">
+                            {% for i in "12345" %}
+                                {% if forloop.counter <= review.rating %}
+                                    <i class="fas fa-star"></i>
+                                {% else %}
+                                    <i class="far fa-star"></i>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="review-body">
+                        <p>{{ review.comment }}</p>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="empty-reviews">
+                    <i class="fas fa-book-open"></i>
+                    <p>No reviews yet. Be the first to share your thoughts!</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <!-- Review Form Section -->
+    <div class="review-form-section">
+        <h2 class="section-heading">Write a Review</h2>
+        
+        <form method="post" class="review-form">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="{{ form.rating.id_for_label }}">Your Rating</label>
+                <div class="rating-input">
+                    {{ form.rating }}
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.comment.id_for_label }}">Your Review</label>
+                {{ form.comment }}
+            </div>
+            
+            <button type="submit" class="submit-button">
+                <i class="fas fa-paper-plane"></i> Submit Review
+            </button>
+        </form>
+    </div>
+    
+    <div class="navigation">
+        <a href="{% url 'home' %}" class="nav-button">
+            <i class="fas fa-arrow-left"></i> Back to Library
+        </a>
+    </div>
+</div>
+{% endblock %}

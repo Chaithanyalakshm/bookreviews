@@ -1,0 +1,869 @@
+/* Global Styles */
+body {
+    background: linear-gradient(to right, #e3d238, #4a410a);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background */
+.bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 2, 2, 0.4);
+    z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+    background: #1a1a1a;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: rgb(247, 230, 230);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: rgb(244, 239, 239);
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #bf8e12;
+}
+
+/* Main Content */
+.content-container {
+    padding: 80px 15px;
+    text-align: center;
+    width: 100%;
+}
+
+h1, h2 {
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #e1d5d5;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Login Form */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-card {
+    background: linear-gradient(to bottom, #938c40, #93922d);
+
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form label {
+    align-self: flex-start;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-form .btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #5c370f;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-form .btn-primary:hover {
+    background-color: #2ec320;
+    color:black;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .login-card {
+        width: 90%;
+    }
+}
+
+nav{
+    font-size: 20px;
+    
+}
+title{
+    font-size: 30px;
+    color: #0f0e0e;
+}
+p{
+    color: #020202;
+}
+a{
+    color: #000000;
+    font-size: 15px;
+}
+h1{
+    font-size: 30px;
+}
+.navbar-brand {
+    font-size: 3.5rem; /* Increase the size */
+    font-weight: bold;
+    color: #bea110 !important;
+    transition: 0.3s;
+}
+
+
+/* Header Styling */
+
+
+
+
+
+
+
+
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Roboto:wght@300;400;700&display=swap');
+
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #c8d35d;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Background Image Styling */
+.bg-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: url('../images/background.jpg') no-repeat center center/cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0.01;
+    z-index: -1;
+}
+
+/* Header Styling */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #0a0908;
+}
+
+p.lead {
+    font-size: 1.2rem;
+    color: #fef1f1;
+}
+
+/* Search Bar Styling */
+form.d-flex input {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 2px solid #080807;
+    background-color: transparent;
+    color: #0c0909;
+}
+
+form.d-flex input::placeholder {
+    color: #dcdcdc;
+}
+
+form.d-flex button {
+    border-radius: 30px;
+    background-color: #e6e3db;
+    color: #1a1a2e;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+form.d-flex button:hover {
+    background-color: #e09b00;
+}
+
+
+
+h2.fw-bold.text-primary {
+  color: #000000 !important; /* Change to your desired color */
+}
+/* Increase font size for book title */
+.card-title a {
+  font-size: 1.5rem; /* Adjust as needed */
+  font-weight: bold;
+}
+
+/* Increase font size for author name */
+.card-text {
+  font-size: 1.2rem; /* Adjust as needed */
+  font-weight: 500;
+  color: #333; /* Darker color for better visibility */
+}
+.badge.bg-warning {
+  font-size: 1.2rem; /* Adjust as needed */
+  font-weight: bold;
+  padding: 8px 12px; /* Increase padding for better appearance */
+  border-radius: 8px; /* Optional: Make it more rounded */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card-footer .btn-primary {
+  background-color: #4b2507; /* Change to your desired color */
+  border-color: #000000; /* Ensure border matches */
+  color: #cabbbb; /* Text color */
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+  border-radius: 20px;
+}
+
+.card-footer .btn-primary:hover {
+  background-color: #814013; /* Darker shade for hover effect */
+  border-color: #080403;
+  transform: scale(1.05);
+}
+
+
+
+
+/* Make sure these selectors are specific enough to override Bootstrap defaults */
+.card, .card-body {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Override the existing card styles to remove white background */
+.card {
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #dce34a, #643e08) !important;
+    color: #060101;
+    transition: transform 0.3s;
+    border: none; /* Remove border if it's creating a white outline */
+}
+
+.book-card {
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #c0d05a, #6e680e) !important;
+    color: #ddcccc;
+    transition: 0.3s;
+    border: none; /* Remove border if it's creating a white outline */
+}
+
+/* If the card footer has a white background */
+.card-footer, .book-card .card-footer {
+    background: transparent !important;
+    border-top: none;
+}
+
+/* If there are any other elements inside the card with white backgrounds */
+.card-header, .card-title, .card-text {
+    background: transparent !important;
+}
+
+.btn-hover-effect {
+    background: #2e1205;
+    color: #d7d7eb;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.btn-hover-effect:hover {
+    background: #daab3e;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bg-container {
+        height: 100vh;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    p.lead {
+        font-size: 2rem;
+    }
+    form.d-flex input {
+        width: 70%;
+    }
+}
+p{
+    color: #171111;
+}
+
+
+/* Header Styling */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #100f0b; /* Change this to your desired color */
+}
+
+p.lead {
+    font-size:1.5rem;
+    color: #ffffff; /* Change this to your desired color */
+}
+.book-card .card-title a {
+    font-size: 1.5rem; /* Adjust as needed */
+}
+.book-card .card-title a {
+    font-size: 1.5rem; /* Adjust as needed */
+    font-weight: bold;
+    color: #0d0a07; /* Change to your desired color */
+}
+
+.book-card .card-title a:hover {
+    color: #000000; /* Darker shade for hover effect */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Main Colors */
+:root {
+    --light-brown: #5a390d;
+    --medium-brown: #bb9c10;
+    --dark-brown: #d3782d;
+    --accent-brown: #a38f77;
+    --black: #272727;
+    --light-black: #3a3a3a;
+    --off-white: #c48d46;
+    --rating-gold: #d1a33a;
+  }
+  
+  body {
+    background-color: var(--off-white);
+    color: var(--black);
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+  }
+  
+  /* Book Detail Container */
+  .book-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Book Hero Section */
+  .book-hero {
+    background: linear-gradient(135deg, var(--dark-brown), var(--light-brown));
+    color: white;
+    padding: 60px 40px;
+    position: relative;
+  }
+  
+  .book-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/static/images/texture.png');
+    opacity: 0.1;
+    pointer-events: none;
+  }
+  
+  .book-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+  }
+  
+  .book-title {
+    font-size: 2.8rem;
+    margin: 0 0 10px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .book-author {
+    font-size: 1.4rem;
+    font-style: italic;
+    margin: 0 0 20px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .rating-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(3, 3, 3, 0.2);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+  }
+  
+  .rating-badge i {
+    color: var(--rating-gold);
+    margin-right: 8px;
+  }
+  
+  /* Book Content */
+  .book-content {
+    display: flex;
+    padding: 40px;
+    gap: 40px;
+    background-color: white;
+    
+  }
+  
+  .book-image-wrapper {
+    flex: 0 0 300px;
+    margin-top: -80px;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .book-image {
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    border: 10px solid white;
+  }
+  
+  .book-info {
+    flex: 1;
+  }
+  
+  .book-metadata {
+    display: flex;
+    margin-bottom: 25px;
+  }
+  
+  .metadata-item {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    background-color: var(--light-brown);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  
+  .metadata-item i {
+    margin-right: 8px;
+  }
+  
+  .book-description h2 {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  
+  .book-description h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-brown);
+  }
+  
+  .book-description p {
+    color: var(--light-black);
+    font-size: 1.6rem;
+    line-height: 1.8;
+  }
+  
+  /* Reviews Section */
+  .reviews-section {
+    padding: 50px 40px;
+    background-color: var(--off-white);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .section-heading {
+    font-size: 1.8rem;
+    color: var(--black);
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-brown);
+  }
+  
+  .reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+  
+  .review-card {
+    background-color: rgb(243, 207, 99);
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .review-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-brown);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-brown);
+  }
+  
+  .review-rating {
+    color:rgb(18, 18, 7);
+  }
+  
+  .review-body p {
+    color: var(--light-black);
+    font-size: 2rem;
+    line-height: 1.6;
+  }
+  
+  .empty-reviews {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: rgb(253, 243, 243);
+    border-radius: 8px;
+    text-align: center;
+    color: var(--accent-brown);
+  }
+  
+  .empty-reviews i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    opacity: 0.7;
+  }
+  
+  /* Review Form */
+  .review-form-section {
+    padding: 50px 40px;
+    background-color: rgba(251, 255, 252, 0);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .review-form {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  .form-group label {
+    display: block;
+    color: var(--black);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .rating-input {
+    display: flex;
+    gap: 10px;
+    
+  }
+  
+  
+  .rating-input select {
+    padding: 12px;
+    border: 1px solid var(--medium-brown);
+    border-radius: 4px;
+    background-color: white;
+    color: var(--black);
+    width: 100px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--dark-brown);
+    border-radius: 4px;
+    background-color: rgb(245, 245, 245);
+    color: var(--black);
+    font-size: 1rem;
+    min-height: 150px;
+    resize: vertical;
+    font-family: inherit;
+    outline: none;
+  }
+  
+  textarea:focus, .rating-input select:focus {
+    border-color: var(--dark-brown);
+    box-shadow: 0 0 0 2px rgba(140, 122, 107, 0.2);
+  }
+  
+  .submit-button {
+    background-color: var(--dark-brown);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  .submit-button i {
+    margin-right: 8px;
+  }
+  
+  .submit-button:hover {
+    background-color: var(--black);
+  }
+  
+  /* Navigation */
+  .navigation {
+    padding: 30px 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .nav-button {
+    display: inline-flex;
+    align-items: center;
+    color: var(--dark-brown);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+  
+  .nav-button i {
+    margin-right: 8px;
+  }
+  
+  .nav-button:hover {
+    color: var(--black);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .book-content {
+      flex-direction: column;
+    }
+    
+    .book-image-wrapper {
+      flex: 0 0 auto;
+      margin: -80px auto 20px;
+      max-width: 250px;
+    }
+    
+    .book-hero {
+      padding: 40px 25px;
+    }
+    
+    .book-title {
+      font-size: 2.2rem;
+    }
+    
+    .reviews-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .book-content, .reviews-section, .review-form-section, .navigation {
+      padding: 30px 25px;
+    }
+  }
+
+
+
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align inputs */
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    color: var(--black);
+    font-weight: 600;
+    margin-bottom: 5px; /* Reduced margin for better spacing */
+    font-size: 1.4rem;
+    text-align: center; /* Centering text */
+}
+
+.rating-input {
+    display: block; /* Ensures the input appears below the label */
+    width: 50%; /* Adjust width as needed */
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+.register-link a {
+  font-size: 18px; /* Increase size */
+  font-weight: bold; /* Optional for better visibility */
+}
+
+
+
+
+
+
+
+
+
